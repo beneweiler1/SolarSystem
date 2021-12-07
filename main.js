@@ -42,7 +42,6 @@ scene.add(ambientLight)
 // 				controls.dragToLook = false;
 
 
-
 document.addEventListener( 'mousewheel', (event) => {
   camera.position.z +=event.deltaY/100;
 });
