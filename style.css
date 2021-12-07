@@ -1,0 +1,13 @@
+canvas {
+  position:fixed;
+  top: 10;
+  left: 0;
+}
+html{
+  background-color: black;
+}
+
+button{
+  color: white;
+  background-color: black;
+}
