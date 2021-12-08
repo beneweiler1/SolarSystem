@@ -7,6 +7,7 @@ import { FontLoader } from 'three/examples/jsm/loaders/FontLoader.js';
 import { MapControls, OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 //import { GridHelper } from 'three';
 
+
 const scene = new THREE.Scene();
 
 const camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight , 0.1, 2000);
@@ -21,33 +22,15 @@ camera.position.setZ(4900);
 
 renderer.render(scene,camera);
 
-
 const pointLight =  new THREE.PointLight(0xffffff)
 //const gridHelper = new THREE.GridHelper(200,50)
 const ambientLight = new THREE.AmbientLight(0xffffff)
-pointLight.position.set(0,0,50)
-scene.add(ambientLight)
-//scene.add(gridHelper)
-
-//const lightHelper = new THREE.PointLightHelper(pointLight); 
-//scene.add(lightHelper)
-
-// const controls = new OrbitControls(camera, renderer.domElement)
-
-// const controls = new FlyControls( camera, renderer.domElement );
-// 				controls.movementSpeed = 1000;
-// 				controls.domElement = renderer.domElement;
-// 				controls.rollSpeed = Math.PI / 24;
-// 				controls.autoForward = true;
-// 				controls.dragToLook = false;
-
+pointLight.position.set(100,100,100)
+scene.add(ambientLight, pointLight)//scene.add(gridHelper)
 
 document.addEventListener( 'mousewheel', (event) => {
   camera.position.z +=event.deltaY/100;
 });
-
-//1,000,000 = one 
-//planets are 1,000,000 times larger than they really are
 
 document.addEventListener('keypress', (event => {
   if (event.key == 'w'){
@@ -456,7 +439,6 @@ loader.load('fonts/SquareFont_Regular.json', function (font) {
   textMesh.position.y = 0.8
   scene.add(textMesh)
 });
-
 
 
 
