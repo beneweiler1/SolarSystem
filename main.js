@@ -63,7 +63,6 @@ const neptuneTexture = new  THREE.TextureLoader().load('images/Neptune.jpg')
 const normalTexture = new  THREE.TextureLoader().load('images/normal.jpg')
 
 //https://www.youtube.com/watch?v=IA3HjAV2nzU&ab_channel=Genka
-
 //load text fonts
 const loader = new FontLoader();
 
@@ -138,7 +137,7 @@ const Sun = new THREE.Mesh(
   new THREE.SphereGeometry(50, 32,32),
   new THREE.MeshStandardMaterial( {
     map: sunTexture,
-    normalMap: normalTexture
+    //normalMap: normalTexture
   } )
 );
 scene.add(Sun)
@@ -169,7 +168,7 @@ const Mercury = new THREE.Mesh(
   new THREE.SphereGeometry(0.33),
   new THREE.MeshStandardMaterial( {
     map: mercuryTexture,
-    normalMap: normalTexture
+    //normalMap: normalTexture
   } )
 );
 
@@ -202,7 +201,7 @@ const Venus = new THREE.Mesh(
   new THREE.SphereGeometry(0.95),
   new THREE.MeshStandardMaterial( {
     map: venusTexture,
-    normalMap: normalTexture
+    //normalMap: normalTexture
   } )
 );
 
@@ -235,7 +234,7 @@ const Earth = new THREE.Mesh(
   new THREE.SphereGeometry(1),
   new THREE.MeshStandardMaterial( {
     map: earthTexture,
-    normalMap: normalTexture
+    //normalMap: normalTexture
   } )
 );
 scene.add(Earth)
@@ -245,7 +244,7 @@ const Moon = new THREE.Mesh(
   new THREE.SphereGeometry(0.22,32,32),
   new THREE.MeshStandardMaterial( {
     map: moonTexture,
-    normalMap: normalTexture
+    //normalMap: normalTexture
   } )
 );
 
@@ -272,7 +271,7 @@ scene.add(Moon)
 Moon.position.z = 4350.616
 
 loader.load('fonts/SquareFont_Regular.json', function (font) {
-  const geometry = new TextGeometry(' Moon \n 238,900 km from Earth \n Second Solar Body Explored by HUmans' ,{
+  const geometry = new TextGeometry(' Moon \n 238,900 km from Earth \n First solar object explored by humans other than earth' ,{
     font: font,
     size:.02,
     height: 2,
@@ -296,7 +295,7 @@ const Mars = new THREE.Mesh(
   new THREE.SphereGeometry(0.53,32,32),
   new THREE.MeshStandardMaterial( {
     map: marsTexture,
-    normalMap: normalTexture
+    //normalMap: normalTexture
   } )
 );
 scene.add(Mars)
@@ -326,7 +325,7 @@ const Jupiter = new THREE.Mesh(
   new THREE.SphereGeometry(11,32,32),
   new THREE.MeshStandardMaterial( {
     map: jupiterTexture,
-    normalMap: normalTexture
+    //normalMap: normalTexture
   } )
 );
 scene.add(Jupiter)
@@ -357,7 +356,7 @@ const Saturn = new THREE.Mesh(
   new THREE.SphereGeometry(9,32,32),
   new THREE.MeshStandardMaterial( {
     map: saturnTexture,
-    normalMap: normalTexture
+    //normalMap: normalTexture
   } )
 );
 scene.add(Saturn)
@@ -388,7 +387,7 @@ const Uranus = new THREE.Mesh(
   new THREE.SphereGeometry(4,32,32),
   new THREE.MeshStandardMaterial( {
     map: uranusTexture,
-    normalMap: normalTexture
+    //normalMap: normalTexture
   } )
 );
 scene.add(Uranus)
@@ -418,7 +417,7 @@ const Neptune = new THREE.Mesh(
   new THREE.SphereGeometry(4,32,32),
   new THREE.MeshStandardMaterial( {
     map: neptuneTexture,
-    normalMap: normalTexture
+    //normalMap: normalTexture
   } )
 );
 scene.add(Neptune)
@@ -457,16 +456,16 @@ Array(1000).fill().forEach(addStar)
 
 function animate() {
   requestAnimationFrame( animate );
-  Sun.rotation.y += 0.0001
-  Mercury.rotation.y += 0.01
-  Venus.rotation.y -= 0.01
+  Sun.rotation.y += 0.00037
+  Mercury.rotation.y += 0.00017
+  Venus.rotation.y += 0.0004
   Earth.rotation.y += 0.01
-  Moon.rotation.y += 0.001
+  Moon.rotation.y += 0.0003
   Mars.rotation.y += 0.01
-  Jupiter.rotation.y += 0.001
-  Saturn.rotation.y += 0.001
-  Uranus.rotation.y += 0.001
-  Neptune.rotation.y += 0.001
+  Jupiter.rotation.y += 0.024
+  Saturn.rotation.y += 0.021
+  Uranus.rotation.y += 0.014
+  Neptune.rotation.y += 0.015
   ring1.rotation.z += 0.001
   // ring1.rotation.x += .011
   // ring1.rotation.y += .01

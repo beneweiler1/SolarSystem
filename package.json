@@ -1,11 +1,10 @@
 {
   "name": "solarsystem",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "vite build, build.chunkSizeWarningLimit: 7000;",
-    "serve": "vite preview",
-    "start": "node index.js"
+    "build": "vite build, chunkSizeWarningLimit: 7000;",
+    "serve": "vite preview"
   },
   "devDependencies": {
     "vite": "^2.6.4"
