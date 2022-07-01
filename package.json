@@ -3,7 +3,6 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "vite build, chunkSizeWarningLimit: 7000;",
     "serve": "vite preview"
   },
   "devDependencies": {
@@ -11,5 +10,17 @@
   },
   "dependencies": {
     "three": "^0.135.0"
-  }
+  },
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beneweiler1/SolarSystem.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/beneweiler1/SolarSystem/issues"
+  },
+  "homepage": "https://github.com/beneweiler1/SolarSystem#readme",
+  "description": ""
 }
