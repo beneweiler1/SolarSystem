@@ -50,23 +50,23 @@ document.addEventListener('keypress', (event => {
 
 
 //load textures
-const sunTexture = new THREE.TextureLoader().load('images/sun.jpg')
-const mercuryTexture = new THREE.TextureLoader().load('images/Mercury.jpg')
-const venusTexture = new  THREE.TextureLoader().load('images/venus.jpg')
-const earthTexture = new THREE.TextureLoader().load('images/Earth.jpg')
-const moonTexture = new  THREE.TextureLoader().load('images/moon.jpg')
-const marsTexture = new  THREE.TextureLoader().load('images/mars.png')
-const jupiterTexture = new  THREE.TextureLoader().load('images/Jupiter.jpg')
-const saturnTexture = new  THREE.TextureLoader().load('images/Saturn.jpg')
-const uranusTexture = new  THREE.TextureLoader().load('images/Uranus.jpg')
-const neptuneTexture = new  THREE.TextureLoader().load('images/Neptune.jpg')
-const normalTexture = new  THREE.TextureLoader().load('images/normal.jpg')
+const sunTexture = new THREE.TextureLoader().load('dist/images/sun.jpg')
+const mercuryTexture = new THREE.TextureLoader().load('dist/images/Mercury.jpg')
+const venusTexture = new  THREE.TextureLoader().load('dist/images/venus.jpg')
+const earthTexture = new THREE.TextureLoader().load('dist/images/Earth.jpg')
+const moonTexture = new  THREE.TextureLoader().load('dist/images/moon.jpg')
+const marsTexture = new  THREE.TextureLoader().load('dist/images/mars.png')
+const jupiterTexture = new  THREE.TextureLoader().load('dist/images/Jupiter.jpg')
+const saturnTexture = new  THREE.TextureLoader().load('dist/images/Saturn.jpg')
+const uranusTexture = new  THREE.TextureLoader().load('dist/images/Uranus.jpg')
+const neptuneTexture = new  THREE.TextureLoader().load('dist/images/Neptune.jpg')
+const normalTexture = new  THREE.TextureLoader().load('dist/images/normal.jpg')
 
 //https://www.youtube.com/watch?v=IA3HjAV2nzU&ab_channel=Genka
 //load text fonts
 const loader = new FontLoader();
 
-loader.load('fonts/SquareFont_Regular.json', function (font) {
+loader.load('dist/fonts/SquareFont_Regular.json', function (font) {
   const geometry = new TextGeometry('Move 1,000,000 km forward with "w" and backward with "s" \n move 10,000,000 km forward with "d" and backward with "a"' ,{
     font: font,
     size:8,
@@ -83,7 +83,7 @@ loader.load('fonts/SquareFont_Regular.json', function (font) {
   scene.add(textMesh)
 });
 
-loader.load('fonts/StarJedi Special Edition_Regular.json', function (font) {
+loader.load('dist/fonts/StarJedi Special Edition_Regular.json', function (font) {
   const geometry = new TextGeometry('Welcome to our Solar System \n   Created by Ben Weiler',{
     font: font,
     size:11,
@@ -101,7 +101,7 @@ loader.load('fonts/StarJedi Special Edition_Regular.json', function (font) {
 });
 
 
-loader.load('fonts/StarJedi Special Edition_Regular.json', function (font) {
+loader.load('dist/fonts/StarJedi Special Edition_Regular.json', function (font) {
   const geometry = new TextGeometry('The End',{
     font: font,
     size:0.8,
@@ -121,9 +121,9 @@ loader.load('fonts/StarJedi Special Edition_Regular.json', function (font) {
 
 
 
-var geometry = new THREE.TorusGeometry( 15, 0.8, 100, 2999 );
+var geometry = new THREE.TorusGeometry(15, 3, 2, 1000);
 const ring1 = new THREE.Mesh(geometry, new THREE.MeshStandardMaterial({
-  color: 0x808080, wireframe: true
+  color: 0x888888, wireframe: true
 }));
 scene.add(ring1);
 
@@ -143,7 +143,7 @@ const Sun = new THREE.Mesh(
 scene.add(Sun)
 Sun.position.z = 4500
 
-loader.load('fonts/SquareFont_Regular.json', function (font) {
+loader.load('dist/fonts/SquareFont_Regular.json', function (font) {
   const geometry = new TextGeometry(' Sun \n Largest Object in Solar System \n Mass: 333,000*mass of Earth \n Size: 109*Earth Radius' ,{
     font: font,
     size:5,
@@ -175,7 +175,7 @@ const Mercury = new THREE.Mesh(
 scene.add(Mercury)
 Mercury.position.z = 4442.1
 
-loader.load('fonts/SquareFont_Regular.json', function (font) {
+loader.load('dist/fonts/SquareFont_Regular.json', function (font) {
   const geometry = new TextGeometry(' Mercury \n Second Smallest Planet \n Terrestrial Planet \n Mass: 0.056*mass of Earth \n Size: 0.38*Earth Radius \n 57,900,000 km from sun'  ,{
     font: font,
     size:.07,
@@ -208,7 +208,7 @@ const Venus = new THREE.Mesh(
 scene.add(Venus)
 Venus.position.z = 4392
 
-loader.load('fonts/SquareFont_Regular.json', function (font) {
+loader.load('dist/fonts/SquareFont_Regular.json', function (font) {
   const geometry = new TextGeometry(' Venus \n Fourth Smallest Planet \n Terrestrial Planet \n Mass: 0.82*mass of Earth \n Size: 0.95*Earth Radius \n 108,000,000 km from sun'  ,{
     font: font,
     size:.06,
@@ -248,7 +248,7 @@ const Moon = new THREE.Mesh(
   } )
 );
 
-loader.load('fonts/SquareFont_Regular.json', function (font) {
+loader.load('dist/fonts/SquareFont_Regular.json', function (font) {
   const geometry = new TextGeometry(' Earth \n Fifth Smallest Planet \n Terrestrial Planet \n Mass: 60.0E24 kg \n Size: 6,378 km \n 149,600,000 km from sun \n home' ,{
     font: font,
     size:.09,
@@ -270,7 +270,7 @@ loader.load('fonts/SquareFont_Regular.json', function (font) {
 scene.add(Moon)
 Moon.position.z = 4350.616
 
-loader.load('fonts/SquareFont_Regular.json', function (font) {
+loader.load('dist/fonts/SquareFont_Regular.json', function (font) {
   const geometry = new TextGeometry(' Moon \n 238,900 km from Earth \n First solar object explored by humans other than earth' ,{
     font: font,
     size:.02,
@@ -301,7 +301,7 @@ const Mars = new THREE.Mesh(
 scene.add(Mars)
 Mars.position.z = 4272
 
-loader.load('fonts/SquareFont_Regular.json', function (font) {
+loader.load('dist/fonts/SquareFont_Regular.json', function (font) {
   const geometry = new TextGeometry(' Mars \n Third Smallest Planet \n Terrestrial Planet \n Mass: Earth*0.11 kg \n Size: Earth*0.53 km \n 228,000,000 km from Sun' ,{
     font: font,
     size:0.1,
@@ -331,7 +331,7 @@ const Jupiter = new THREE.Mesh(
 scene.add(Jupiter)
 Jupiter.position.z = 3722
 
-loader.load('fonts/SquareFont_Regular.json', function (font) {
+loader.load('dist/fonts/SquareFont_Regular.json', function (font) {
   const geometry = new TextGeometry(' Jupiter \n Largest Planet \n Jovian Planet \n Mass: Earth*317.9 kg \n Size: Earth*11.3 km \n 779,000,000 km from Sun' ,{
     font: font,
     size:0.7,
@@ -362,7 +362,7 @@ const Saturn = new THREE.Mesh(
 scene.add(Saturn)
 Saturn.position.z = 3070
 
-loader.load('fonts/SquareFont_Regular.json', function (font) {
+loader.load('dist/fonts/SquareFont_Regular.json', function (font) {
   const geometry = new TextGeometry(' Saturn \n Second Largest Planet \n Jovian Planet \n Mass: Earth*95.1 kg \n Size: Earth*9.4 km \n 1,430,000,000 km from sun' ,{
     font: font,
     size:0.7,
@@ -393,7 +393,7 @@ const Uranus = new THREE.Mesh(
 scene.add(Uranus)
 Uranus.position.z = 650
 
-loader.load('fonts/SquareFont_Regular.json', function (font) {
+loader.load('dist/fonts/SquareFont_Regular.json', function (font) {
   const geometry = new TextGeometry(' Uranus \n Third Largest Planet \n Jovian Planet \n Mass: Earth*14.54 kg \n Size: Earth*4 km \n 2,850,000,000 km from sun' ,{
     font: font,
     size:0.2,
@@ -401,7 +401,7 @@ loader.load('fonts/SquareFont_Regular.json', function (font) {
   } )
   const textMesh = new THREE.Mesh(geometry, [
     new THREE.MeshPhongMaterial({color: 0x00AEFF}), //font
-    new THREE.MeshPhongMaterial({color: 0x000000}) //side
+    //new THREE.MeshPhongMaterial({color: 0x000000}) //side
   ])
   textMesh.castShadow = true
   textMesh.position.z = Uranus.position.z + 1
@@ -422,7 +422,7 @@ const Neptune = new THREE.Mesh(
 );
 scene.add(Neptune)
 
-loader.load('fonts/SquareFont_Regular.json', function (font) {
+loader.load('dist/fonts/SquareFont_Regular.json', function (font) {
   const geometry = new TextGeometry(' Netptune \n Fourth Largest Planet \n Jovian Planet \n Mass: Earth*17.1 kg \n Size: Earth*3.9 km \n 4,500,000,000 km from sun' ,{
     font: font,
     size:0.2,
