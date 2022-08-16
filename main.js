@@ -1,11 +1,7 @@
 import './style.css'
 import * as THREE from 'three';
-//import * as THREE from '../build/three.module.js';
 import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry.js';
 import { FontLoader } from 'three/examples/jsm/loaders/FontLoader.js';
-
-import { MapControls, OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-//import { GridHelper } from 'three';
 
 
 const scene = new THREE.Scene();
@@ -48,19 +44,20 @@ document.addEventListener('keypress', (event => {
 
 }))
 
+const textureLoader = new THREE.TextureLoader()
 
 //load textures
-const sunTexture = new THREE.TextureLoader().load('dist/images/sun.jpg')
-const mercuryTexture = new THREE.TextureLoader().load('dist/images/Mercury.jpg')
-const venusTexture = new  THREE.TextureLoader().load('dist/images/venus.jpg')
-const earthTexture = new THREE.TextureLoader().load('dist/images/Earth.jpg')
-const moonTexture = new  THREE.TextureLoader().load('dist/images/moon.jpg')
-const marsTexture = new  THREE.TextureLoader().load('dist/images/mars.png')
-const jupiterTexture = new  THREE.TextureLoader().load('dist/images/Jupiter.jpg')
-const saturnTexture = new  THREE.TextureLoader().load('dist/images/Saturn.jpg')
-const uranusTexture = new  THREE.TextureLoader().load('dist/images/Uranus.jpg')
-const neptuneTexture = new  THREE.TextureLoader().load('dist/images/Neptune.jpg')
-const normalTexture = new  THREE.TextureLoader().load('dist/images/normal.jpg')
+const sunTexture = textureLoader.load('dist/images/sun.jpg')
+const mercuryTexture = textureLoader.load('dist/images/Mercury.jpg')
+const venusTexture = textureLoader.load('dist/images/venus.jpg')
+const earthTexture = textureLoader.load('dist/images/Earth.jpg')
+const moonTexture = textureLoader.load('dist/images/moon.jpg')
+const marsTexture = textureLoader.load('dist/images/mars.png')
+const jupiterTexture = textureLoader.load('dist/images/Jupiter.jpg')
+const saturnTexture = textureLoader.load('dist/images/Saturn.jpg')
+const uranusTexture = textureLoader.load('dist/images/Uranus.jpg')
+const neptuneTexture = textureLoader.load('dist/images/Neptune.jpg')
+const normalTexture = textureLoader.load('dist/images/normal.jpg')
 
 //https://www.youtube.com/watch?v=IA3HjAV2nzU&ab_channel=Genka
 //load text fonts
@@ -196,6 +193,7 @@ loader.load('dist/fonts/SquareFont_Regular.json', function (font) {
 
 /////////////////////////VENUS///////////////////////////
 
+venusTexture.magFilter = THREE.LinearFilter
 
 const Venus = new THREE.Mesh(
   new THREE.SphereGeometry(0.95),
@@ -455,7 +453,6 @@ Array(1000).fill().forEach(addStar)
 
 
 function animate() {
-  requestAnimationFrame( animate );
   Sun.rotation.y += 0.00037
   Mercury.rotation.y += 0.00017
   Venus.rotation.y += 0.0004
@@ -471,11 +468,13 @@ function animate() {
   // ring1.rotation.y += .01
   renderer.setSize(window.innerWidth, window.innerHeight);
   renderer.render(scene, camera);
+  requestAnimationFrame( animate );
   //controls.update();
 }
 
 function moveSun(){
   camera.position.z = Sun.position.z + 250
+  //camera.lookAt(Sun.position.z+250)
 }
 var sunButton = document.getElementById('sunButton')
 sunButton.onclick = moveSun
