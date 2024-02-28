@@ -3,11 +3,14 @@ import * as THREE from 'three';
 import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry.js';
 import { FontLoader } from 'three/examples/jsm/loaders/FontLoader.js';
 
+const sizes = {
+  width: window.innerWidth,
+  height: window.innerHeight
+}
 
 const scene = new THREE.Scene();
 
 const camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight , 0.1, 2000);
-//const camera = new THREE.(30, 1, 10, 2000);
 const renderer = new THREE.WebGLRenderer({
   canvas: document.querySelector('#bg'),
 });
@@ -19,7 +22,6 @@ camera.position.setZ(4900);
 renderer.render(scene,camera);
 
 const pointLight =  new THREE.PointLight(0xffffff)
-//const gridHelper = new THREE.GridHelper(200,50)
 const ambientLight = new THREE.AmbientLight(0xffffff)
 pointLight.position.set(100,100,100)
 scene.add(ambientLight, pointLight)//scene.add(gridHelper)
@@ -43,6 +45,15 @@ document.addEventListener('keypress', (event => {
   }
 
 }))
+
+window.addEventListener('resize', () => {
+  sizes.width = window.innerWidth;
+  sizes.height = window.innerHeight;
+
+  camera.aspect = sizes.width / sizes.height
+  camera.updateProjectionMatrix()
+  renderer.setSize(sizes.width, sizes.height)
+})
 
 const textureLoader = new THREE.TextureLoader()
 
@@ -70,7 +81,7 @@ loader.load('dist/fonts/SquareFont_Regular.json', function (font) {
     height: 2,
   } )
   const textMesh = new THREE.Mesh(geometry, [
-    new THREE.MeshPhongMaterial({color: 0xff00ff}), //font
+    new THREE.MeshPhongMaterial({color: 0xFFE81F}), //font
     new THREE.MeshPhongMaterial({color: 0x00000f}) //side
   ])
   textMesh.castShadow = true
@@ -87,7 +98,7 @@ loader.load('dist/fonts/StarJedi Special Edition_Regular.json', function (font) 
     height: 4,
   } )
   const textMesh = new THREE.Mesh(geometry, [
-    new THREE.MeshPhongMaterial({color: 0xff00ff}), //font
+    new THREE.MeshPhongMaterial({color: 0xFFE81F}), //font
     new THREE.MeshPhongMaterial({color: 0x000000}) //side
   ])
   textMesh.castShadow = true
@@ -105,7 +116,7 @@ loader.load('dist/fonts/StarJedi Special Edition_Regular.json', function (font) 
     height: 4,
   } )
   const textMesh = new THREE.Mesh(geometry, [
-    new THREE.MeshPhongMaterial({color: 0xff00ff}), //font
+    new THREE.MeshPhongMaterial({color: 0xFFE81F}), //font
     new THREE.MeshPhongMaterial({color: 0x000000}) //side
   ])
   textMesh.castShadow = true
